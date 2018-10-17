@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
-  root to: "books#index"
+  get 'style_guide/index'
+  devise_for :users
+  root to: "home#index"
 
   get '', to: 'books#index'
   resources :books
   resources :authors
   resources :sales
 
-  namespace :admin do
-    resources :books
-    resources :authors
-    resources :sales
-   end 
+
+  # namespace :admin do
+  #   resources :books
+  #   resources :authors
+  #   resources :sales
+  #  end 
+
+   get "style_guide", to: "style_guide#index"
 end
 
 
