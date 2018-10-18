@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  
+  get 'home/index'
   get 'style_guide/index'
   devise_for :users
   root to: "home#index"
+
+  get “profile”, to: “profile#show”
+  put "profile", to: "profile#update"
+  patch "profile", to: "profile#update"
+  get “profile/edit”, to: “profile#edit”
 
   get '', to: 'books#index'
   resources :books
@@ -30,5 +37,8 @@ end
   # get 'authors/show'
   # get 'books/index'
   # get 'books/show'
+  # get 'profile/show'
+  # get 'profile/update'
+  # get 'profile/edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
