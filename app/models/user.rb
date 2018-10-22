@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :sales
   has_many :purchased_books, through: :sales, source: :book
 
-  validates :name, :email, presence: true
+  validates :email, presence: true
+
+  has_one_attached :avatar
 
 end

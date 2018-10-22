@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
 
-  # get "profile", to: "profile#show"
-  # put "profile", to: "profile#update"
-  # patch "profile", to: "profile#update"
-  # get "profile/edit", to: "profile#edit"
+  get "profile", to: "profile#show"
+  put "profile", to: "profile#update"
+  patch "profile", to: "profile#update"
+  get "profile/edit", to: "profile#edit"
 
   resources :books, only: [:show, :edit, :update] do
     resources :purchases, only: [:new, :create]

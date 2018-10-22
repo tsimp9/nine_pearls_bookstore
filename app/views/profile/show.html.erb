@@ -1,1 +1,6 @@
 <h1><%= current_user.name %></h1>
+<% if current_user.avatar.attached? %>
+	<%= image_tag current_user.avatar %>
+<% end %>
+
+<!-- Only try to display image tag if current user has one attached -->
