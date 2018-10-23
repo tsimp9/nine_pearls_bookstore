@@ -8,6 +8,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://js.stripe.com/v3/"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
@@ -17,6 +19,7 @@
     <% if alert %>
      <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+    <h1 class="c-title c-title--large">Nine Pearls Bookstore</h1>
     <%= yield %>
   </body>
 </html>
