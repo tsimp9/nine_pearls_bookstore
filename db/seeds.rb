@@ -13,7 +13,7 @@ authors = [
   ]
 
   # must create these users as authors in console for them to work in console/testing.
-  #Authors first because author can exist without a book
+  #Authors first because author can exist without a book. Book cannot exist without author.
 
   authors.each do |author|
     Author.create!(name: author[:name])
@@ -59,7 +59,7 @@ Now Zélie has one chance to bring back magic and strike against the monarchy. W
       )
     book.book_cover.attach(io: File.open(Rails.root.join('app/assets/images/the_hate_u_give.jpg')), filename:"the_hate_u_give.jpg")
     book.save!
-  end
+end
 
 
 
