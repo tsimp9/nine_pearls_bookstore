@@ -37,4 +37,3 @@ end
 
 # def new = a get request
 # redirect to a path helper - the sales helper
-end
