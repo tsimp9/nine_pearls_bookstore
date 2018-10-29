@@ -1,3 +1,4 @@
+require "sidekiq/web"
 Rails.application.routes.draw do
   
   get 'home/index'
@@ -25,6 +26,10 @@ Rails.application.routes.draw do
   #   resources :authors
   #   resources :sales
   #  end 
+
+  mount Sidekiq::Web => "/sidekiq"
+  #Gives us a UI into our background jobs. Shows what failed, etc.
+  #Not a requirement
 
    get "style_guide", to: "style_guide#index"
 end
