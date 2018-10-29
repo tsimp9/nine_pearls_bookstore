@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :book do
     title "The Hate U Give"
+    description: 
     price: 9.90
     author: { create :author }
   end
